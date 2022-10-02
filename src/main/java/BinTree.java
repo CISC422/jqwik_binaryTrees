@@ -4,8 +4,8 @@
 public class BinTree {
     public int key;
     public final String value;
-    public BinTree left = null;
-    public BinTree right = null;
+    public BinTree left;
+    public BinTree right;
 
     public BinTree(int key, String val, BinTree l, BinTree r) {
         this.key = key;

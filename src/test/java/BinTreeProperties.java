@@ -3,19 +3,14 @@
  */
 
 import net.jqwik.api.*;
-        import net.jqwik.api.arbitraries.IntegerArbitrary;
-        import net.jqwik.time.api.Dates;
-        import net.jqwik.web.api.Web;
-        import org.assertj.core.api.Assertions;
+import org.assertj.core.api.Assertions;
 
-        import java.time.LocalDate;
-        import java.util.ArrayList;
-        import java.util.HashSet;
-        import java.util.List;
-        import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
-        import static java.lang.Math.max;
-        import static java.lang.Math.pow;
+import static java.lang.Math.max;
+import static java.lang.Math.pow;
 
 public class BinTreeProperties {
 
@@ -117,7 +112,7 @@ public class BinTreeProperties {
         System.out.println(bt);
         List<Integer> keyL = keyList(bt);
         int numNodes = keyL.size();
-        int numDiffKeys = (new HashSet<Integer>(keyL)).size();
+        int numDiffKeys = (new HashSet<>(keyL)).size();
         Assertions.assertThat(numDiffKeys).isEqualTo(numNodes);
     }
 
@@ -184,14 +179,6 @@ public class BinTreeProperties {
 //                .alpha()
 //                .ofLength(1)
 //                .map(s -> s = s.substring(0).toLowerCase());
-    }
-
-    @Provide
-    Arbitrary<LocalDate> dates() {
-        return Dates
-                .dates()
-                .atTheEarliest(LocalDate.of(1900, 1, 1))
-                .atTheLatest(LocalDate.of(2021, 12, 31));
     }
 
 }
