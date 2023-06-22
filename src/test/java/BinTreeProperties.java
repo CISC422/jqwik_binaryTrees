@@ -105,7 +105,7 @@ public class BinTreeProperties {
         Assertions.assertThat(numNodes(bt)).isEqualTo((int) pow(2,height(bt))-1);
     }
 
-    // generated trees have unique keys
+    // generated trees have unique keys (fails)
     @Property
     @Report(Reporting.GENERATED)
     void propertyCheckBinTreeWithChildrenGenerator3(@ForAll("binTreesWithChildren") BinTree bt) {
@@ -116,7 +116,7 @@ public class BinTreeProperties {
         Assertions.assertThat(numDiffKeys).isEqualTo(numNodes);
     }
 
-    // generated trees satisfy search tree property
+    // generated trees satisfy search tree property (fails)
     @Property
     @Report(Reporting.GENERATED)
     void propertyCheckBinTreeWithChildrenGenerator4(@ForAll("binTreesWithChildren") BinTree bt) {
